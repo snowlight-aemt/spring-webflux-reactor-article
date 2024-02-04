@@ -1,0 +1,19 @@
+###
+POST http://localhost:8080/article
+Content-Type: application/json
+
+{
+  "title": "title 1",
+  "body": "body 1",
+  "authorId": 0
+}
+
+<> 2024-02-04T120023.200.json
+
+###
+GET {{domain}}/article/1
+
+<> 2024-02-04T120010.404.json
+<> 2024-02-04T120000.404.json
+<> 2024-02-04T115949.404.json
+<> 2024-02-04T115924.500.json

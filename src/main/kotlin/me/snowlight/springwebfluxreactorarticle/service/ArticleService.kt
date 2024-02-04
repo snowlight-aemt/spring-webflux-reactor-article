@@ -25,12 +25,12 @@ class ArticleService(
         return articleRepository.findById(id).switchIfEmpty { throw NoArticleException("id: $id") }
     }
 
-    fun getAll(): Flux<Article> {
-        return articleRepository.findAll()
-    }
-
-    fun getAll(title: String): Flux<Article> {
-        return articleRepository.findAllByTitleContains(title)
+    fun getAll(title: String? = null): Flux<Article> {
+        return if (title.isNullOrEmpty()) {
+            articleRepository.findAll()
+        } else {
+            articleRepository.findAllByTitleContains(title)
+        }
     }
 
     // LEARN `flatMap` 를 사용하는 이유는 r2dbc 의 비동기를 살리기 위해서.
