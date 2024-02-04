@@ -32,7 +32,7 @@ class ArticleController(
     }
 
     @GetMapping("/all")
-    fun getAll(@RequestParam title: String): Flux<Article> {
+    fun getAll(@RequestParam title: String?): Flux<Article> {
         return service.getAll(title)
     }
 

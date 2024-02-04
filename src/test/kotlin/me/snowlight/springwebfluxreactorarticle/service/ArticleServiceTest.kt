@@ -22,6 +22,8 @@ class ArticleServiceTest(
 
         val readArticle = service.get(article.id).block()
         assertEquals(article, readArticle)
+        assertNotNull(article.createdAt)
+        assertNotNull(article.updatedAt)
     }
 
     @Test

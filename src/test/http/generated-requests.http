@@ -1,19 +1,30 @@
 ###
-POST http://localhost:8080/article
+POST {{domain}}/article
 Content-Type: application/json
 
 {
   "title": "title 1",
-  "body": "body 1",
+  "body": "title 2",
   "authorId": 0
 }
-
-<> 2024-02-04T120023.200.json
 
 ###
 GET {{domain}}/article/1
 
-<> 2024-02-04T120010.404.json
-<> 2024-02-04T120000.404.json
-<> 2024-02-04T115949.404.json
-<> 2024-02-04T115924.500.json
+###
+GET {{domain}}/article/all
+
+###
+GET {{domain}}/article/all?title=232
+
+###
+PUT {{domain}}/article/1
+Content-Type: application/json
+
+{
+  "title": "2323232",
+  "authorId": 1234444
+}
+
+###
+DELETE {{domain}}/article/2

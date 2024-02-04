@@ -3,3 +3,10 @@ spring:
     init:
       mode: embedded
       schema-locations: classpath:db-init/schema.sql
+  output:
+    ansi:
+      enabled: always
+#logging:
+#  level:
+#    me.snowlight: debug
+#    org.springframework.r2dbc.core: debug
