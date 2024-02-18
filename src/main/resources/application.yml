@@ -10,10 +10,10 @@ spring:
   output:
     ansi:
       enabled: always
-#logging:
-#  level:
-#    me.snowlight: debug
-#    org.springframework.r2dbc.core: debug
+logging:
+  level:
+    me.snowlight: debug
+    org.springframework.r2dbc.core: debug
 ---
 spring:
   config:
@@ -26,3 +26,7 @@ spring:
   sql:
     init:
       mode: never
+logging:
+  level:
+    me.snowlight: debug
+    org.springframework.r2dbc.core: off
